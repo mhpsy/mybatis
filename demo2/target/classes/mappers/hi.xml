@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.mhpsy.mybatis2.mapper.hi">
+    <select id="getUserByTableName" resultType="User">
+        select * from ${TableName};
+    </select>
+
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
+        insert into my_user values (null,#{name},#{email},#{address});
+    </insert>
+
+</mapper>
