@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.mhpsy.mybatis2.mapper.SqlLikeByMapper">
+    <select id="getUserByLikeName" resultType="User">
+        select * from my_user where name like '%${username}%';
+    </select>
+
+    <select id="getUserByLikeNameGood" resultType="User">
+        select * from my_user where name like concat('%',#{username},'%');
+    </select>
+
+    <select id="getUserByLikeNameGood2" resultType="User">
+        select * from my_user where name like "%"#{username}"%";
+    </select>
+
+</mapper>
